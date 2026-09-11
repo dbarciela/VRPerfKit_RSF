@@ -1,10 +1,12 @@
-VR Performance Toolkit RavenSystem's Fork
-=========================================
+VR Performance Toolkit RSF v4.0
+================================
 
 [![Donate](https://img.shields.io/badge/donate-PayPal-blue.svg)](https://paypal.me/ravensystem)
 
-In an effort to continue this project, I have created this fork with updated components and SDKs. I added too some
-improvements, like HRM and dynamic modes, and other compatibility options.
+Modernized version directly based on [RavenSystem's VRPerfKit RSF v3.2](https://github.com/RavenSystem/VRPerfKit_RSF).
+Consolidates and integrates essential community fixes and enhancements (Meta Quest Link compatibility, FFR vertical offset, OpenVR memory optimizations, self-contained SDKs, and automated CI/CD release builds).
+
+For the detailed provenance and credits of each contribution, see [CONTRIBUTIONS.md](CONTRIBUTIONS.md).
 
 Performance-oriented collection of mods for VR games.
 

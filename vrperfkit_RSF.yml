@@ -92,6 +92,9 @@ fixedFoveated:
   outerRadius: 0.80
   # The remainder of the image will be rendered at 1/16th resolution
 
+  # Vertical offset to shift the focal center vertically (useful for headset sweet spots)
+  verticalOffset: 0.0
+
   # Edge radius: Creates a Hidden Radial Mask. Available only in RDM mode
   edgeRadius: 1.15
 

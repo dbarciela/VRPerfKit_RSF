@@ -31,13 +31,13 @@ namespace vrperfkit {
 			for (int x = 0; x < halfWidth; ++x) {
 				float fx = float(x) / halfWidth;
 				float fy = float(y) / height;
-				float distance = 2 * sqrtf((fx - leftProjX) * (fx - leftProjX) + (fy - leftProjY) * (fy - leftProjY));
+				float distance = 2 * sqrtf((fx - leftProjX) * (fx - leftProjX) + (fy - leftProjY - g_config.ffr.verticalOffset) * (fy - leftProjY - g_config.ffr.verticalOffset));
 				data[y * width + x] = DistanceToVRSLevel(distance);
 			}
 			for (int x = halfWidth; x < width; ++x) {
 				float fx = float(x - halfWidth) / halfWidth;
 				float fy = float(y) / height;
-				float distance = 2 * sqrtf((fx - rightProjX) * (fx - rightProjX) + (fy - rightProjY) * (fy - rightProjY));
+				float distance = 2 * sqrtf((fx - rightProjX) * (fx - rightProjX) + (fy - rightProjY - g_config.ffr.verticalOffset) * (fy - rightProjY - g_config.ffr.verticalOffset));
 				data[y * width + x] = DistanceToVRSLevel(distance);
 			}
 		}
@@ -52,7 +52,7 @@ namespace vrperfkit {
 			for (int x = 0; x < width; ++x) {
 				float fx = float(x) / width;
 				float fy = float(y) / height;
-				float distance = 2 * sqrtf((fx - projX) * (fx - projX) + (fy - projY) * (fy - projY));
+				float distance = 2 * sqrtf((fx - projX) * (fx - projX) + (fy - projY - g_config.ffr.verticalOffset) * (fy - projY - g_config.ffr.verticalOffset));
 				data[y * width + x] = DistanceToVRSLevel(distance);
 			}
 		}

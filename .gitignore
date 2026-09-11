@@ -4,6 +4,5 @@ VRPerfKit_RSF.xcodeproj
 CMakeSettings.json
 out
 build
-build.x86
-ThirdParty/LibOVR
-ThirdParty/nvapi
+*.zip
+dist/

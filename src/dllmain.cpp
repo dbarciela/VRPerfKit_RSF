@@ -88,11 +88,19 @@ namespace {
 
 		vrperfkit::OpenLogFile(vrperfkit::g_basePath / "vrperfkit_RSF.log");
 		LOG_INFO << "===============================";
-		LOG_INFO << "VR Performance Toolkit RSF v3.2";
+		LOG_INFO << "VR Performance Toolkit RSF v4.0";
 		LOG_INFO << "===============================\n";
 
-		vrperfkit::LoadConfig(vrperfkit::g_basePath / "vrperfkit_RSF.yml");
-		vrperfkit::LoadHotkeys(vrperfkit::g_basePath / "vrperfkit_RSF.yml");
+		fs::path configPath = vrperfkit::g_basePath / "vrperfkit_RSF.yml";
+		if (!fs::exists(configPath)) {
+			fs::path altConfigPath = vrperfkit::g_basePath / "vrperfkit.yml";
+			if (fs::exists(altConfigPath)) {
+				configPath = altConfigPath;
+			}
+		}
+
+		vrperfkit::LoadConfig(configPath);
+		vrperfkit::LoadHotkeys(configPath);
 		vrperfkit::PrintCurrentConfig();
 		vrperfkit::PrintHotkeys();
 

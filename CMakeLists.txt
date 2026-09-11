@@ -1,3 +1,4 @@
+set(CMAKE_POLICY_VERSION_MINIMUM "3.5" CACHE STRING "" FORCE)
 cmake_minimum_required(VERSION 3.12.0)
 
 project(VRPerfKit)
@@ -119,10 +120,14 @@ set_compute_shader(src/cas/cas.upscale.hlsl "shader_cas_upscale.h" "g_CASUpscale
 set(HRM_FILES
 	src/hrm/hidden_radial_mask.hlsl
 	src/hrm/fullscreen_tri.vert.hlsl
+	src/hrm/radial_density_mask.frag.hlsl
+	src/hrm/reconstruction.compute.hlsl
 )
 source_group("hrm" FILES ${HRM_FILES})
 set_pixel_shader(src/hrm/hidden_radial_mask.hlsl "shader_hrm_mask.h" "g_HRM_MaskShader")
 set_vertex_shader(src/hrm/fullscreen_tri.vert.hlsl "shader_hrm_fullscreen_tri.h" "g_HRM_FullscreenTriShader")
+set_pixel_shader(src/hrm/radial_density_mask.frag.hlsl "shader_rdm_mask.h" "g_RDM_MaskShader")
+set_compute_shader(src/hrm/reconstruction.compute.hlsl "shader_rdm_reconstruction.h" "g_RDM_ReconstructionShader")
 
 set(MAIN_FILES
 	src/config.h

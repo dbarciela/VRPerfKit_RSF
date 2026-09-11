@@ -30,6 +30,7 @@ namespace vrperfkit {
 		float midRadius = 0.65f;
 		float outerRadius = 0.80f;
 		float edgeRadius = 1.15f;
+		float verticalOffset = 0.0f;
 		bool favorHorizontal = true;
 		std::string overrideSingleEyeOrder;
 		bool fastMode = false;

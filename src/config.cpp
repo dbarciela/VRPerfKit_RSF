@@ -139,6 +139,7 @@ namespace vrperfkit {
 			ffr.midRadius = ffrCfg["midRadius"].as<float>(ffr.midRadius);
 			ffr.outerRadius = ffrCfg["outerRadius"].as<float>(ffr.outerRadius);
 			ffr.edgeRadius = ffrCfg["edgeRadius"].as<float>(ffr.edgeRadius);
+			ffr.verticalOffset = ffrCfg["verticalOffset"].as<float>(ffr.verticalOffset);
 			ffr.preciseResolution = ffrCfg["preciseResolution"].as<bool>(ffr.preciseResolution);
 			ffr.ignoreFirstTargetRenders = ffrCfg["ignoreFirstTargetRenders"].as<int>(ffr.ignoreFirstTargetRenders);
 			ffr.ignoreLastTargetRenders = ffrCfg["ignoreLastTargetRenders"].as<int>(ffr.ignoreLastTargetRenders);
@@ -236,6 +237,9 @@ namespace vrperfkit {
 			LOG_INFO << "    * Inner radius:  " << std::setprecision(6) << g_config.ffr.innerRadius;
 			LOG_INFO << "    * Mid radius:    " << std::setprecision(6) << g_config.ffr.midRadius;
 			LOG_INFO << "    * Outer radius:  " << std::setprecision(6) << g_config.ffr.outerRadius;
+			if (g_config.ffr.verticalOffset != 0.0f) {
+				LOG_INFO << "    * Vert. offset:  " << std::setprecision(6) << g_config.ffr.verticalOffset;
+			}
 			if (g_config.ffr.method == FixedFoveatedMethod::RDM) {
 				LOG_INFO << "    * Edge radius:   " << std::setprecision(6) << g_config.ffr.edgeRadius;
 			}
